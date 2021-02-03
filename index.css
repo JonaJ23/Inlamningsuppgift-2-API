@@ -11,3 +11,21 @@
     margin: auto;
     padding: 25px;
 }
+
+.search-menu {
+    background-color: skyblue;
+    height: 200px;
+}
+
+.searchBox .search-bar {
+    margin-left: 850px;
+    
+}
+
+.search-menu .checkboxes {
+    margin-left: 1600px;
+    padding-top: 90px;
+}
+
+
+

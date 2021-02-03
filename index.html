@@ -17,16 +17,24 @@
 
             <div class="search-menu">
                 <form action="/main.js">
-                    <input type="checkbox" id="weatherId" name="weatherName" value="weatherValue">
-                    <label for="weatherId">Only weather</label>
-                    <input type="checkbox" id="attractionsId" name="attractionsName" value="attractionsValue">
-                    <label for="attractionsId">Only attractions</label>
-                    <input type="checkbox" id="alphaId" name="alphaName" value="alphaValue">
-                    <label for="alphaId">Only alphabetically</label>
-                    <!--Submit button-->
-                    <input type="text" placeholder="Search.." name="search"> 
-                    <input type="submit" value="Go">
-                </form>
+                    <div class="checkboxes">
+                        <input class="weatherCheck" type="checkbox" id="weatherId" name="weatherName" value="weatherValue">
+                        <label class="weatherLbl" for="weatherId">Only weather</label><br>
+    
+                        <input class="attractionsCheck" type="checkbox" id="attractionsId" name="attractionsName" value="attractionsValue">
+                        <label class="attractionsLbl" for="attractionsId">Only attractions</label><br>
+    
+                        <input class="alphaCheck" type="checkbox" id="alphaId" name="alphaName" value="alphaValue">
+                        <label class="alphaLbl" for="alphaId">Only alphabetically</label><br><br>
+                    </div>
+
+                    <div class="searchBox">
+                        <!--Submit button-->
+                        <input class="search-bar" type="text" placeholder="Search.." name="search"> 
+                        <input type="submit" value="Go">
+                    </div>
+                </form>               
             </div>
+        
 </body>
 </html>
