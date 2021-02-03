@@ -1,1 +1,1 @@
-# Inlamningsuppgift-2-API
+# Inlamningsuppgift-2 (javascript)
