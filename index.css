@@ -3,7 +3,6 @@
     margin: 0;
 }
 
-
 body {
     background-image: url('city.png')
 }
@@ -19,7 +18,8 @@ body {
 }
 
 
-/* Search options */
+
+/* Search menu */
 
 .search-menu > p {
     margin-left: 35%;

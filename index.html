@@ -17,7 +17,9 @@
 
             <div class="search-menu">
                 <p>Search for a city.</p>
-                <form action="/main.js">
+
+                <form name="searchForm" action="/main.js" onsubmit="return validateForm()">
+                    <!--Checkboxes-->
                     <div id="checksId" class="checkboxes">
                         <input class="weatherCheck" type="checkbox" id="weatherId" name="weatherName" value="weatherValue">
                         <label class="weatherLbl" for="weatherId">Only weather</label><br>
@@ -32,7 +34,7 @@
                     <div class="searchBox">
                         <!--Submit button-->
                         <input class="search-bar" type="text" placeholder="Search.." name="search"> 
-                        <button type="submit"><i class="fa fa-search"></i></button>
+                        <button id="searchBtn" type="submit" onclick="clickFunction()"><i class="fa fa-search"></i></button>
                     </div>
                 </form>               
             </div>

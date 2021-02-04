@@ -1,5 +1,6 @@
 window.onload = function() {
 
+
     var checkboxes = document.getElementById("checksId");
     var checks = checkboxes.getElementsByTagName("input");
     for (var i = 0; i < checks.length; i++) {
@@ -12,3 +13,14 @@ window.onload = function() {
         };
     }
 };
+
+
+function validateForm() {
+    var x = document.forms["searchForm"]["search"].value;
+    if (x == "" || x == null) {
+      alert("Please enter a valid city name.");
+      return false;
+    }
+};
+
+
