@@ -11,38 +11,44 @@ body {
 .header {
     background-color: blue;
     color: white;
-    border: 5px blue;
     height: 50px;
     margin: auto;
     padding: 25px;
 }
 
 
-
-
 /* Search options */
 
 .search-menu > p {
-    margin-left: 850px;
-    padding-top: 40px;
-    font-size: 30px;
+    margin-left: 35%;
+    font-size: 40px;
+    padding-top: 35px;
 }
 
 .search-menu {
     background-color: skyblue;
-    height: 240px;
+    height: 300px;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 2%;
 }
 
 .searchBox .search-bar {
-    margin-left: 850px;
+    margin-left: 35%;
+    font-size: 20px;
     
 }
 
 .search-menu .checkboxes {
-    margin-left: 850px;
-    padding-top: 50px;
+    padding-bottom: 2%;
+    margin-left: 35%;
+    font-size: 20px;
+    margin-top: 5%;
 }
 
+.searchBox button {
+    font-size: 20px;
+}
 
 
 
