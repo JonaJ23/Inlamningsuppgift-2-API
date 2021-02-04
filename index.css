@@ -3,6 +3,7 @@
     margin: 0;
 }
 
+
 body {
     background-image: url('city.png')
 }
@@ -15,6 +16,11 @@ body {
     margin: auto;
     padding: 25px;
 }
+
+
+
+
+/* Search options */
 
 .search-menu > p {
     margin-left: 850px;
@@ -36,6 +42,7 @@ body {
     margin-left: 850px;
     padding-top: 50px;
 }
+
 
 
 
