@@ -15,6 +15,9 @@ window.onload = function() {
 };
 
 
+
+
+
 function validateForm() {
     var x = document.forms["searchForm"]["search"].value;
     if (x == "" || x == null) {

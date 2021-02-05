@@ -12,7 +12,7 @@
 <body>  
 
         <div class="header">
-            <h1><i class="fa fa-globe"></i> City Travel</h1>
+            <a href="index.html" class="logo"> <i class="fa fa-globe"></i> City Travel</a>
         </div>
 
             <div class="search-menu">
@@ -30,13 +30,27 @@
                         <input class="alphaCheck" type="checkbox" id="alphaId" name="alphaName" value="alphaValue">
                         <label class="alphaLbl" for="alphaId">Only alphabetically</label><br><br>
                     </div>
-
+                    <!--Search bar-->
                     <div class="searchBox">
-                        <!--Submit button-->
                         <input class="search-bar" type="text" placeholder="Search.." name="search"> 
-                        <button id="searchBtn" type="submit" onclick="clickFunction()"><i class="fa fa-search"></i></button>
+                        <button id="searchBtn" type="submit" onclick="searchFunction()"><i class="fa fa-search"></i></button>
                     </div>
                 </form>               
+            </div>
+
+            <!--Search results-->
+            <div class="resultContainer">
+                <h1>Göteborg</h1>
+                <div class="searchResult">
+                    <!--Weather-->
+                    <div id="weatherResult-Id" class="weatherResult">
+                        <div class="weatherResult-item">
+                            <h1>Current Weather</h1>
+                            <p></p>
+                        </div>
+
+                    </div>
+                </div>
             </div>
 </body>
 </html>
