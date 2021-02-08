@@ -1,3 +1,5 @@
+const API_key = "1c39d2bbe79193bd9cf7413fc49c0d29"
+
 window.onload = function() {
 
 
@@ -15,15 +17,5 @@ window.onload = function() {
 };
 
 
-
-
-
-function validateForm() {
-    var x = document.forms["searchForm"]["search"].value;
-    if (x == "" || x == null) {
-      alert("Please enter a valid city name.");
-      return false;
-    }
-};
 
 

@@ -103,7 +103,7 @@ body {
     display: flex;
 }
 
-.weatherResult-item {
+.weather-container {
     text-align: center;
     padding: 10px;
     display: -webkit-box;
@@ -122,6 +122,28 @@ body {
 }
 
 
+
+.searchResult > h2 {
+    text-align: center;
+    font-size: 40px;
+}
+
+
+.grid-container {
+    color: white;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: skyblue;
+    padding: 40px;
+}
+
+.attraction-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 80px;
+    font-size: 30px;
+    text-align: center;
+  }
   
 
 
