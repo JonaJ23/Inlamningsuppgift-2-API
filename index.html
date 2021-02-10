@@ -1,80 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>City Travel</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
-    <link rel="stylesheet" href="index.css">
-    <script src="main.js"></script>
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
 
-<!--To do list
+  <!--To do list
 Add API and ClientID.
 Add weather with temperature check and weather condition.
 Add attraction with top 3 attractions.
 Make checkboxes hide certain containers.
 Add enabling of alphabetical order.-->
 
-<body>  
+  <body>
+      <div class="header">
+        <a href="index.html" class="logo">
+          <i class="fa fa-globe"></i> City Travel</a>
+      </div>
+      
+    <div class="search-menu">
+      <p>Search for a city.</p>
 
-        <div class="header">
-            <a href="index.html" class="logo"> <i class="fa fa-globe"></i> City Travel</a>
-        </div>
+      <!--Checkboxes-->
+      <div id="checksId" class="checkboxes">
+        <input
+          class="weatherCheck"
+          type="checkbox"
+          id="weatherId"
+          name="weatherName"
+          value="weatherValue"
+        />
+        <label class="weatherLbl" for="weatherId">Only weather</label><br />
 
-            <div class="search-menu">
-                <p>Search for a city.</p>
-                
-                <!--Checkboxes-->
-                <div id="checksId" class="checkboxes">
-                    <input class="weatherCheck" type="checkbox" id="weatherId" name="weatherName" value="weatherValue">
-                    <label class="weatherLbl" for="weatherId">Only weather</label><br>
+        <input
+          class="attractionsCheck"
+          type="checkbox"
+          id="attractionsId"
+          name="attractionsName"
+          value="attractionsValue"
+        />
+        <label class="attractionsLbl" for="attractionsId"
+          >Only attractions</label
+        ><br/>
 
-                    <input class="attractionsCheck" type="checkbox" id="attractionsId" name="attractionsName" value="attractionsValue">
-                    <label class="attractionsLbl" for="attractionsId">Only attractions</label><br>
+        <input
+          class="alphaCheck"
+          type="checkbox"
+          id="alphaId"
+          name="alphaName"
+          value="alphaValue"
+        />
+        <label class="alphaLbl" for="alphaId">Only alphabetically</label
+        ><br /><br />
+      </div>
 
-                    <input class="alphaCheck" type="checkbox" id="alphaId" name="alphaName" value="alphaValue">
-                    <label class="alphaLbl" for="alphaId">Only alphabetically</label><br><br>
-                </div>
-                <!--Search bar-->
-                <div class="searchBox">
-                    <input class="search-bar" type="text" id="searchForm" placeholder="Search.." name="search"> 
-                    <button id="searchBtn"><i class="fa fa-search"></i></button>
-                </div>
-
+      <!--Search bar-->
+      <div class="search-bar">
+        <input
+          class="search-box"
+          type="text"
+          id="search-box"
+          placeholder="Search.."
+          name="search"/>
+        <button id="searchBtn"><i class="fa fa-search"></i></button>
+      </div>
+    </div>
+        <!--Location-->
+        <main>
+          <section class="location">
+            <div class="city">Stockholm, SE</div>
+            <div class="date">Wedneysday 10 April 2021</div>
+            <div class="current">
+              <div class="temp">15<span>°C</span></div>
+              <div class="weather">Sunny</div>
             </div>
-
-            <!--Search results-->
-            <div class="resultContainer">
-                <div class="searchResult">
-                    
-                    <!--Weather-->
-                    <div id="weatherResult-Id" class="weatherResult">
-                        <div class="weather-container">
-                            <h1>Current Weather</h1>
-
-                            <div class="results__weather__details__item">
-                                <img src="http://openweathermap.org/img/wn/01d@2x.png" alt="cloud" id="weatherImg">
-                                <p></p>
-                            </div>
-                            <div class="results__weather__details__item">
-                                <i class="fas fa-thermometer-half"></i>
-                                <p></p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!--Attractions-->
-
-                    <h2>Top attractions</h2>
-                    <div class="grid-container">
-                        <div class="attraction-item">-</div>
-                        <div class="attraction-item">-</div>
-                        <div class="attraction-item">-</div>
-                    </div>
-                </div>
-            </div>
-</body>
+          </section>
+          <section class="grid-container">
+            <div class></div>
+          </section>
+        </main>
+    <script src="main.js"></script>
+  </body>
 </html>
+
+
+<!--<div id="weatherResult-Id" class="weatherResult">
+          <div class="weather-container">
+            <h1>Current Weather</h1>
+
+            <div class="results__weather__details__item">
+              <img
+                src="http://openweathermap.org/img/wn/01d@2x.png"
+                alt="cloud"
+                id="weatherImg"
+              />
+              <p></p>
+            </div>
+            <div class="results__weather__details__item">
+              <i class="fas fa-thermometer-half"></i>
+              <p></p>
+            </div>
+          </div>
+        </div>-->
