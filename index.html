@@ -47,7 +47,6 @@ Add enabling of alphabetical order.-->
                 class="weatherCheck"
                 type="checkbox"
                 id="weatherCheck"
-                onclick="searchFilter()"
                 name="weatherName"
                 value="weatherValue"
               />
@@ -57,7 +56,6 @@ Add enabling of alphabetical order.-->
                 class="attractionsCheck"
                 type="checkbox"
                 id="attractionsCheck"
-                onclick="searchFilter()"
                 name="attractionsName"
                 value="attractionsValue"
               />
@@ -76,19 +74,31 @@ Add enabling of alphabetical order.-->
         <!--Location-->
         <main>
           <section class="location">
-            <div class="city">Stockholm, SE</div>
+            <div class="city">Exampletown, GA</div>
             <div class="date">Wedneysday 10 April 2021</div>
             <div class="current">
               <div class="temp">15<span>°C</span></div>
               <div class="weather">Sunny</div>
             </div>
-          </section>
-          <!-- <section id="attraction" class="attraction">
-            <div>
-              <h1>Aights</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni fugit qui sequi tempora maxime quae perferendis temporibus nulla numquam mollitia.</p>
+            <h3 id="attractions-title">Top Attractions</h3><br><br>
+            <div class="attractions" id="attractions">
+                <div class="attraction-box">
+                    <h3 id="attbox0-title">Spinning tower</h3>
+                    <p id="attbox0-adress">Spring fields 2</p>
+                    <img src="" id="attbox0-icon">
+                </div>
+                <div class="attraction-box">
+                    <h3 id="attbox1-title">Future Museum</h3>
+                    <p id="attbox1-adress">Lucky road 44</p>
+                    <img src="" id="attbox1-icon">
+                </div>
+                <div class="attraction-box">
+                    <h3 id="attbox2-title">Forest Bridge</h3>
+                    <p id="attbox2-adress">Mystery lane 19</p>
+                    <img src="" id="attbox2-icon">
+                </div>
             </div>
-          </section> -->
+          </section>
         </main>
       <script src="main.js"></script>
   </body>

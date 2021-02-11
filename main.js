@@ -1,6 +1,6 @@
 const api = {
     key: "1c39d2bbe79193bd9cf7413fc49c0d29",
-    base: "https://api.openweathermap.org/data/2.5/"
+    base: "https://api.openweathermap.org/data/2.5/",
 }
 
 const searchbox = document.querySelector('.search-box');
@@ -8,26 +8,30 @@ searchbox.addEventListener('keypress', setQuery);
 
 function setQuery(event) {
     if (event.keyCode == 13) {
-        getResults(searchbox.value);
+        getWeatherResults(searchbox.value);
+        getAttractionResults(searchbox.value);
         console.log(searchbox.value);
     }
 }
 
-function getResults (query) {
+
+
+// OPENWEATHER
+
+function getWeatherResults(query) {
     fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
     .then(weather => {
         return weather.json();      
-    }).then(displayResults);
+    }).then(displayWeatherResults);
 }
 
-function displayResults (weather) {
+function displayWeatherResults (weather) {
     let city = document.querySelector('.location .city');
     city.innerText = `${weather.name}, ${weather.sys.country}`;
 
     let now = new Date();
     let date = document.querySelector('.location .date');
     date.innerText = dateBuilder(now);
-    debugger;
     let temp = document.querySelector('.current .temp');
     temp.innerHTML = `${Math.round(weather.main.temp)}<span>°C</span>`;
 
@@ -51,22 +55,40 @@ function dateBuilder (d) {
 
 
 
+// FOURSQUARE
+
+function getAttractionResults(city) {
+
+    const clientID = "G21QHFLO1V3QABSS5VYAENKWSPWZLUNFOVXHOCPVLZIAWC4U";
+    const clientSecret = "EDBQEB3FMDFG5LBX5I3TWJACDAJUJGBLJHEVQELYWHGRMP1L";
+
+    fetch('https://api.foursquare.com/v2/venues/explore?client_id=' + clientID + '&client_secret=' + clientSecret + '&near=' + city + '&limit=10&v=20210211')
+        .then(function (response) { return response.json() })
+        .then(function (attractions) {
+            displayAttractionsResults(attractions);
+            console.log(attractions);
+        })
+        .catch(function () {
+        });
+}
+
+function displayAttractionsResults(attractions) {
+
+    let i;
+    for (i = 0; i < 3; i++) {
+        document.getElementById('attbox' + i + '-title').innerHTML = attractions.response.groups[0].items[i].venue.name;
+        document.getElementById('attbox' + i + '-adress').innerHTML = attractions.response.groups[0].items[i].venue.location.address;
+    }
+}
 
 
 
+ /* function searchFilter() {
 
+    const weatherCheckbox = document.getElementById('weatherCheck');
+    const attractionsCheckbox = document.getElementById('checkbox-attractions');
+    const filter = document.getElementById('filter');
 
-
-
-
-
-
-
-
-
-
-
-/* function searchFilter() {
     let searchBox = document.getElementById('search-box');
     let searchString = searchBox.value;
 
@@ -78,18 +100,12 @@ function dateBuilder (d) {
     let weather = document.querySelector('#location');
     let attraction = document.querySelector('#attraction');
 
-    if (Wcheck.checked === true) {
-        weather.style.display = 'flex';
-        attraction.style.display ='none';
-    } 
-    else (Wcheck.checked === false) {
-        weather.style.display = 'flex';
+    function weatherVisible() {
+        const weather = document.getElementById('weatherCheck');
+        weather.style.display = 'block';
     }
+    
+    function weatherHidden() {
+        const weather = document.getElementById('weatherCheck');
         weather.style.display = 'none';
-    }
-    if (Acheck.checked === true) {
-        attraction.style.display = 'flex';
-    } 
-    else {
-        attraction.style.display = 'none';
     } */
