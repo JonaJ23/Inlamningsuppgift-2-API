@@ -31,49 +31,47 @@ Add enabling of alphabetical order.-->
     <div class="search-menu">
       <p>Search for a city.</p>
 
-      <!--Checkboxes-->
-      <div id="checksId" class="checkboxes">
-        <input
-          class="weatherCheck"
-          type="checkbox"
-          id="weatherId"
-          name="weatherName"
-          value="weatherValue"
-        />
-        <label class="weatherLbl" for="weatherId">Only weather</label><br />
+            <!--Search bar-->
+            <div class="search-bar">
+              <input
+                class="search-box"
+                type="text"
+                id="search-box"
+                placeholder="Search.."
+                name="search"/>
+              <button class="searchBtn" id="searchBtn"><i class="fa fa-search"></i></button>
+            </div>
+            <!--Checkboxes-->
+            <div id="checksId" class="checkboxes">
+              <input
+                class="weatherCheck"
+                type="checkbox"
+                id="weatherCheck"
+                onclick="searchFilter()"
+                name="weatherName"
+                value="weatherValue"
+              />
+              <label class="weatherLbl" for="weatherCheck">Weather</label><br />
 
-        <input
-          class="attractionsCheck"
-          type="checkbox"
-          id="attractionsId"
-          name="attractionsName"
-          value="attractionsValue"
-        />
-        <label class="attractionsLbl" for="attractionsId"
-          >Only attractions</label
-        ><br/>
+              <input
+                class="attractionsCheck"
+                type="checkbox"
+                id="attractionsCheck"
+                onclick="searchFilter()"
+                name="attractionsName"
+                value="attractionsValue"
+              />
+              <label class="attractionsLbl" for="attractionsCheck">Attractions</label><br/>
 
-        <input
-          class="alphaCheck"
-          type="checkbox"
-          id="alphaId"
-          name="alphaName"
-          value="alphaValue"
-        />
-        <label class="alphaLbl" for="alphaId">Only alphabetically</label
-        ><br /><br />
-      </div>
-
-      <!--Search bar-->
-      <div class="search-bar">
-        <input
-          class="search-box"
-          type="text"
-          id="search-box"
-          placeholder="Search.."
-          name="search"/>
-        <button id="searchBtn"><i class="fa fa-search"></i></button>
-      </div>
+              <input
+                class="alphaCheck"
+                type="checkbox"
+                id="alphaCheck"
+                name="alphaName"
+                value="alphaValue"
+              />
+              <label class="alphaLbl" for="alphaCheck">Alphabetically</label><br /><br />
+            </div>
     </div>
         <!--Location-->
         <main>
@@ -85,11 +83,14 @@ Add enabling of alphabetical order.-->
               <div class="weather">Sunny</div>
             </div>
           </section>
-          <section class="grid-container">
-            <div class></div>
-          </section>
+          <!-- <section id="attraction" class="attraction">
+            <div>
+              <h1>Aights</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni fugit qui sequi tempora maxime quae perferendis temporibus nulla numquam mollitia.</p>
+            </div>
+          </section> -->
         </main>
-    <script src="main.js"></script>
+      <script src="main.js"></script>
   </body>
 </html>
 

@@ -36,6 +36,10 @@ body {
 
 
 
+
+
+
+
 /* Search menu */
 
 .search-menu > p {
@@ -54,7 +58,7 @@ body {
     margin-top: 2%;
 }
 
-.searchBox .search-bar {
+.search-bar .search-box {
     font-size: 20px;
     padding-top: 1%;
     padding-bottom: 1%;
@@ -70,7 +74,7 @@ body {
     margin-top: 5%;
 }
 
-.searchBox button {
+.search-bar button {
     font-size: 20px;
     padding-right: 1%;
     padding-left: 1%;
@@ -78,72 +82,45 @@ body {
     padding-bottom: 1%;
 }
 
-.searchBox button:hover {
+.search-bar button:hover {
     cursor: pointer;
 }
 
 
-/* Results */
 
-.resultContainer > h1 {
-    text-align: center;
-    margin-top: 1%;
-}
 
-.weatherResult {
-    text-align: center;
-    margin: 25px;
-    margin-left: 41%;
-    margin-right: 41%;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-        justify-content: space-between;
+/* City, date, time and weather check */
+
+main {
+    flex: 1 1 100%;
+    flex-direction: column;
+    padding: 25px 25px 50px;
     display: flex;
-}
-
-.weather-container {
+    align-items: center;
     text-align: center;
-    padding: 10px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    background-color: skyblue;
-    width: 350px;
-    height: 250px;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-        align-items: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-        flex-direction: column;
 }
 
-
-
-.searchResult > h2 {
-    text-align: center;
-    font-size: 40px;
+.location .city {
+    font-size: 50px;
 }
 
-
-.grid-container {
-    color: white;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    background-color: skyblue;
-    padding: 40px;
-}
-
-.attraction-item {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 80px;
+.location .date {
     font-size: 30px;
-    text-align: center;
-  }
+}
+
+.location .temp {
+    font-size: 80px;
+    font-weight: 900;
+    margin: 30px 0px;
+}
+
+.current .temp span {
+    font-weight: 500;
+}
+
+.location .weather {
+    font-size: 32px;
+}
   
 
 
