@@ -43,6 +43,8 @@ window.onload = function () {
     
         let weather_el = document.querySelector('.current .weather');
         weather_el.innerText = weather.weather[0].main;
+        let icon = weather.weather[0].icon;
+        document.getElementById('cond-img').src = 'http://openweathermap.org/img/wn/' + icon + "@2x.png";
     }
     
     function dateBuilder (d) {
