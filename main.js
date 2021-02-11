@@ -7,7 +7,29 @@ window.onload = function () {
     
     const searchBox = document.querySelector('.search-box');
     searchBox.addEventListener('keypress', setQuery);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    const weatherCheckbox = document.getElementById('weatherCheck');
+    const attractionsCheckbox = document.getElementById('attractionsCheck');
+    const filter = document.getElementById('alphaCheck');
     
+    
+
+
     function setQuery(event) {
         if (event.keyCode == 13) {
             getWeatherResults(searchBox.value);
@@ -19,14 +41,49 @@ window.onload = function () {
                 return false;
             }
         }
+
+    }
+
+
+
+    function weatherVisible() {
+        const weather = document.getElementById('weather');
+        weather.style.display = 'block';
+    }
+    
+    function weatherHidden() {
+        const weather = document.getElementById('weather');
+        weather.style.display = 'none';
     }
        
+
+
+
+    function showAttractionResults() {
+        const attractions = document.getElementById('attraction-segment');
+        attractions.style.display = 'flex';
+    }
+    
+    function hideAttractionResults() {
+        const attractions = document.getElementById('attraction-segment');
+        attractions.style.display = 'none';
+    }
+
+
+
+
+
+
+
     
     // OPENWEATHER
     
     function getWeatherResults(query) {
         fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
         .then(weather => {
+
+
+
             return weather.json();      
         }).then(displayWeatherResults);
     }
@@ -73,8 +130,17 @@ window.onload = function () {
         fetch('https://api.foursquare.com/v2/venues/explore?client_id=' + clientID + '&client_secret=' + clientSecret + '&near=' + city + '&limit=10&v=20210211')
             .then(function (response) { return response.json() })
             .then(function (attractions) {
-                displayAttractionsResults(attractions);
-                console.log(attractions);
+
+                if (weatherCheckbox.checked == true) {
+                    hideAttractionResults();
+                }
+                if (weatherCheckbox.checked == false) {
+                    showAttractionResults();
+                }
+                else {
+                    displayAttractionsResults(attractions);
+                    console.log(attractions);
+                }
             })
             .catch(function () {
             });
@@ -88,40 +154,5 @@ window.onload = function () {
             document.getElementById('attbox' + i + '-adress').innerHTML = attractions.response.groups[0].items[i].venue.location.address;
         }
     }
-    
-    
-
-
-
-
-
-
-    
-     /* function searchFilter() {
-    
-        const weatherCheckbox = document.getElementById('weatherCheck');
-        const attractionsCheckbox = document.getElementById('checkbox-attractions');
-        const filter = document.getElementById('filter');
-    
-        let searchBox = document.getElementById('search-box');
-        let searchString = searchBox.value;
-    
-        console.log(searchString);
-    
-        let Wcheck = document.getElementById('weatherCheck');
-        let Acheck = document.getElementById('attractionsCheck');
-    
-        let weather = document.querySelector('#location');
-        let attraction = document.querySelector('#attraction');
-    
-        function weatherVisible() {
-            const weather = document.getElementById('weatherCheck');
-            weather.style.display = 'block';
-        }
-        
-        function weatherHidden() {
-            const weather = document.getElementById('weatherCheck');
-            weather.style.display = 'none';
-        } */
     
 }
