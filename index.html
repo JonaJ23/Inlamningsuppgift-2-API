@@ -33,14 +33,11 @@ Add enabling of alphabetical order.-->
 
             <!--Search bar-->
             <div class="search-bar">
-              <input
-                class="search-box"
-                type="text"
-                id="search-box"
-                placeholder="Search.."
-                name="search"/>
-              <button class="searchBtn" id="searchBtn"><i class="fa fa-search"></i></button>
+              <input class="search-box" type="text" id="search-box" placeholder="Search.." name="search"/>
+              <button class="searchBtn" type="submit" id="searchBtn" onclick="function searchButton()"><i class="fa fa-search"></i></button>
             </div>
+
+
             <!--Checkboxes-->
             <div id="checksId" class="checkboxes">
               <input
@@ -71,30 +68,38 @@ Add enabling of alphabetical order.-->
               <label class="alphaLbl" for="alphaCheck">Alphabetically</label><br /><br />
             </div>
     </div>
+
+
+
         <!--Location-->
         <main>
           <section class="location">
-            <div class="city">Exampletown, GA</div>
+            <div class="city" id="city-name">Exampletown, GA</div>
             <div class="date">Wedneysday 10 April 2021</div>
             <div class="current">
               <div class="temp">15<span>°C</span></div>
               <div class="weather">Sunny</div>
+              <div class="weather-status">
+                <img src="weather.png" alt="weather" id="cond-img"><p id="condition"></p>
             </div>
+            </div>
+
+
             <h3 id="attractions-title">Top Attractions</h3><br><br>
             <div class="attractions" id="attractions">
                 <div class="attraction-box">
-                    <h3 id="attbox0-title">Spinning tower</h3>
-                    <p id="attbox0-adress">Spring fields 2</p>
+                    <h3 id="attbox0-title">asdfasdfasdfasdf</h3>
+                    <p id="attbox0-adress">asdfasdfasdf</p>
                     <img src="" id="attbox0-icon">
                 </div>
                 <div class="attraction-box">
-                    <h3 id="attbox1-title">Future Museum</h3>
-                    <p id="attbox1-adress">Lucky road 44</p>
+                    <h3 id="attbox1-title">Ffasdfasdfasdfasdf</h3>
+                    <p id="attbox1-adress">asdfasdfasdfa</p>
                     <img src="" id="attbox1-icon">
                 </div>
                 <div class="attraction-box">
-                    <h3 id="attbox2-title">Forest Bridge</h3>
-                    <p id="attbox2-adress">Mystery lane 19</p>
+                    <h3 id="attbox2-title">asdfsdafasdffasde</h3>
+                    <p id="attbox2-adress">asdfasdfasdf</p>
                     <img src="" id="attbox2-icon">
                 </div>
             </div>
