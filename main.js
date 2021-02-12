@@ -46,13 +46,13 @@ window.onload = function () {
 
 
 
-    function weatherVisible() {
-        const weather = document.getElementById('weather');
+    function showWeatherResults() {
+        const weather = document.getElementById('weather-segment');
         weather.style.display = 'block';
     }
     
-    function weatherHidden() {
-        const weather = document.getElementById('weather');
+    function hideWeatherResults() {
+        const weather = document.getElementById('weather-segment');
         weather.style.display = 'none';
     }
        
@@ -131,15 +131,25 @@ window.onload = function () {
             .then(function (response) { return response.json() })
             .then(function (attractions) {
 
-                if (weatherCheckbox.checked == true) {
+                displayAttractionsResults(attractions);
+                console.log(attractions);
+
+                if (weatherCheckbox.checked == true) { // Hide attractions if only weather is checked.
                     hideAttractionResults();
+                    showWeatherResults();
+                    if (attractionsCheckbox.checked == true) {
+                        showAttractionResults();
+                    }
                 }
-                if (weatherCheckbox.checked == false) {
+                if (weatherCheckbox.checked == false) { //
                     showAttractionResults();
+                    showWeatherResults();               
                 }
-                else {
-                    displayAttractionsResults(attractions);
-                    console.log(attractions);
+                if (attractionsCheckbox.checked == true) {
+                    showAttractionResults();
+                    if (weatherCheckbox.checked == false) {
+                        hideWeatherResults();
+                    }
                 }
             })
             .catch(function () {
