@@ -1,15 +1,24 @@
 * {
+    font-family: 'montserrat', sans-serif;
     padding: 0;
-    margin: 0;
+    margin: 0;   
 }
 
 body {
-    background-image: url('city.png')
+    
+    background-image: url('city.png');
+    align-content: center;
+    justify-content: center;
+    background-attachment: fixed;  
+    background-size: cover;
+    max-width: 2000px;
+    margin: auto;
+    height: fit-content;
 }
 
 .header {
     overflow: hidden;
-    background-color: #1a5dee;
+    background-color: rgba(27, 113, 170, 0.6);
     padding: 20px 10px;
 }
 
@@ -31,9 +40,8 @@ body {
 }
 
 .header a:hover {
-    background-color: #1a4fc2;
+    background-color: rgba(38, 91, 126, 0.6);
 }
-
 
 
 
@@ -43,53 +51,45 @@ body {
 /* Search menu */
 
 .search-menu > p {
+    color: white;
+    text-shadow: 0 0 0.40em #4b4b4b;
     text-align: center;
     font-size: 40px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'montserrat', sans-serif;
     padding-top: 35px;
+    padding-bottom: 20px;
 }
 
 .search-menu {
-    background-color: skyblue;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: block;
+    background-color: rgba(27, 113, 170, 0.6);
     height: 300px;
     margin-left: 30%;
     margin-right: 30%;
     margin-top: 2%;
+    border-radius: 5px;
+    justify-self: center;
+    align-self: center;
+    justify-content: center;
 }
 
 .search-bar .search-box {
     font-size: 20px;
+    border-radius: 5px;
     padding-top: 1%;
     padding-bottom: 1%;
     padding-left: 1%;
     width: 50%;
-    margin-left: 22%;
-}
-
-.search-menu .checkboxes {
-    padding-bottom: 2%;
-    margin-left: 35%;
-    font-size: 20px;
-    margin-top: 5%;
-}
-
-.search-bar button {
-    font-size: 20px;
-    padding-right: 1%;
-    padding-left: 1%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-}
-
-.search-bar button:hover {
-    cursor: pointer;
+    margin-left: 25%;
+    align-self: center;
 }
 
 
 
 
-/* City, date, time and weather check */
+
+
+/* City, date, time and weather results */
 
 main {
     flex: 1 1 100%;
@@ -100,12 +100,31 @@ main {
     text-align: center;
 }
 
+.weather-segment {
+    color: white;
+    display: none;
+    background-color: rgba(27, 113, 170, 0.6);
+    text-shadow: 0 0 0.40em #4b4b4b;
+    height: 300px;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 2%;
+    border-radius: 5px;
+    justify-self: center;
+    align-self: center;
+    justify-content: center;
+}
+
 .location .city {
-    font-size: 50px;
+    color: white;
+    text-shadow: 0 0 0.40em #4b4b4b;
+    font-size: 70px;
 }
 
 .location .date {
-    font-size: 30px;
+    color: white;
+    text-shadow: 0 0 0.40em #4b4b4b;
+    font-size: 50px;
 }
 
 .location .temp {
@@ -119,8 +138,97 @@ main {
 }
 
 .location .weather {
-    font-size: 32px;
+    font-size: 40px;
 }
-  
+
+#cond-img {
+    width: 120px;
+    font-size: 200px;
+}
+
+
+
+
+/* Checkboxes */
+
+
+.search-menu .checkboxes {
+    padding-bottom: 2%;
+    margin-left: 35%;
+    font-size: 20px;
+    margin-top: 5%;
+}
+
+.weatherLbl {
+    color: white;
+    text-shadow: 0 0 0.40em #4b4b4b;
+}
+
+.attractionsLbl {
+    color: white;
+    text-shadow: 0 0 0.40em #4b4b4b;
+}
+
+.alphaLbl {
+    color: white;
+    text-shadow: 0 0 0.40em #4b4b4b;
+    
+}
+
+
+
+
+
+
+
+
+
+/* Attraction results */
+
+#attractions-title {
+    font-size: 48px;
+}
+
+.attraction-segment {
+    display: none;
+}
+
+
+.attractions {
+    display: flex;
+    grid-template-columns: 5% 30% 30% 30% 5%;
+    grid-template-rows: 200px auto;
+}
+
+
+.attraction-box {
+    display: block;
+    background-color: rgba(27, 113, 170, 0.6);
+    justify-self: center;
+    align-self: center;
+    justify-content: center;
+    border-radius: 5px;
+    width: 400px;
+    height: 200px;
+    padding: 10px;
+    margin: 30px;
+}
+
+.attraction-box h3 {
+    color: white;
+    text-shadow: 0 0 0.40em #4b4b4b;
+    margin: 0;
+    width: 400px;
+    font-size: 36px;
+    padding: 3px 3px 3px 3px;
+}
+
+.attraction-box p {
+    color: white;
+    text-shadow: 0 0 0.40em #4b4b4b;
+    font-size: 26px;
+    padding: 10px;
+    margin: auto;
+}
 
 

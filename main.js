@@ -4,38 +4,25 @@ window.onload = function () {
         key: "1c39d2bbe79193bd9cf7413fc49c0d29",
         base: "https://api.openweathermap.org/data/2.5/",
     }
-    
+
     const searchBox = document.querySelector('.search-box');
     searchBox.addEventListener('keypress', setQuery);
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
     const weatherCheckbox = document.getElementById('weatherCheck');
     const attractionsCheckbox = document.getElementById('attractionsCheck');
-    const filter = document.getElementById('alphaCheck');
-    
-    
+    const filter = document.getElementById('alphaCheck');  
 
 
-    function setQuery(event) {
+    async function setQuery(event) {
         if (event.keyCode == 13) {
+
             getWeatherResults(searchBox.value);
             getAttractionResults(searchBox.value);
             console.log(searchBox.value);
-    
+
             if (searchBox.value == "" || searchBox.value == null) {
                 alert("Please enter a valid city name");
                 return false;
@@ -81,10 +68,7 @@ window.onload = function () {
     function getWeatherResults(query) {
         fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
         .then(weather => {
-
-
-
-            return weather.json();      
+         return weather.json();      
         }).then(displayWeatherResults);
     }
     
@@ -166,3 +150,4 @@ window.onload = function () {
     }
     
 }
+
