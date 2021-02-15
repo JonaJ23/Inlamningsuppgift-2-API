@@ -1,14 +1,8 @@
 window.onload = function () {
 
-    const api = {
-        key: "1c39d2bbe79193bd9cf7413fc49c0d29",
-        base: "https://api.openweathermap.org/data/2.5/",
-    }
 
     const searchBox = document.querySelector('.search-box');
     searchBox.addEventListener('keypress', setQuery);
-
-
 
 
     const weatherCheckbox = document.getElementById('weatherCheck');
@@ -16,22 +10,23 @@ window.onload = function () {
     const filter = document.getElementById('alphaCheck');  
 
 
+    // SEARCHBOX VALUE
+
     async function setQuery(event) {
         if (event.keyCode == 13) {
 
+            if (searchBox.value == "" || searchBox.value == null) {
+                alert("Please enter a valid city name.");
+                return false;
+            }        
             getWeatherResults(searchBox.value);
             getAttractionResults(searchBox.value);
             console.log(searchBox.value);
-
-            if (searchBox.value == "" || searchBox.value == null) {
-                alert("Please enter a valid city name");
-                return false;
-            }
         }
-
     }
 
 
+    // DISPLAY FUNCTION OF WEATHER
 
     function showWeatherResults() {
         const weather = document.getElementById('weather-segment');
@@ -45,10 +40,11 @@ window.onload = function () {
        
 
 
+    // DISPLAY FUNCTION OF ATTRACTIONS
 
     function showAttractionResults() {
         const attractions = document.getElementById('attraction-segment');
-        attractions.style.display = 'flex';
+        attractions.style.display = 'block';
     }
     
     function hideAttractionResults() {
@@ -58,18 +54,36 @@ window.onload = function () {
 
 
 
-
-
-
-
     
-    // OPENWEATHER
+    // OPENWEATHER API-CALL
     
-    function getWeatherResults(query) {
-        fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
-        .then(weather => {
-         return weather.json();      
-        }).then(displayWeatherResults);
+    function getWeatherResults(city) {
+        const weatherAPI = '1c39d2bbe79193bd9cf7413fc49c0d29';
+        
+        fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + weatherAPI + '')
+        .then(function(response) {
+            if (response.ok) {
+                return response.json();
+            } 
+            else if (response.status === 400 || response.status === 404) {
+                alert(city + " could not be found, check spelling or try another city name.")
+            }
+            else if (response.status === 500) {
+                alert("500 Internal error with server. Try again later")
+            }
+            else if (response.status === 401) {
+                alert("Unauthorized access to server detected. Is possibly out of date or suffers from communication error")
+            }
+            else {
+                alert("Oops! Something went wrong. Try again.")
+            }
+        })
+        .then(function(weather) {
+            displayWeatherResults(weather);
+        })
+        .catch(function(error) {
+            console.log(error.message);
+        });
     }
     
     function displayWeatherResults (weather) {
@@ -79,9 +93,11 @@ window.onload = function () {
         let now = new Date();
         let date = document.querySelector('.location .date');
         date.innerText = dateBuilder(now);
-        let temp = document.querySelector('.current .temp');
-        temp.innerHTML = `${Math.round(weather.main.temp)}<span>°C</span>`;
-    
+        
+        const temp = document.getElementById('temp');
+        const celsius = Math.round(parseFloat(weather.main.temp) - 273.15);
+        temp.innerHTML = celsius + '&deg;' + "C";
+
         let weather_el = document.querySelector('.current .weather');
         weather_el.innerText = weather.weather[0].main;
         let icon = weather.weather[0].icon;
@@ -104,7 +120,7 @@ window.onload = function () {
     
     
     
-    // FOURSQUARE
+    // FOURSQUARE CLIENT
     
     function getAttractionResults(city) {
     
@@ -118,7 +134,7 @@ window.onload = function () {
                 displayAttractionsResults(attractions);
                 console.log(attractions);
 
-                if (weatherCheckbox.checked == true) { // Hide attractions if only weather is checked.
+                if (weatherCheckbox.checked == true) { 
                     hideAttractionResults();
                     showWeatherResults();
                     if (attractionsCheckbox.checked == true) {
@@ -136,7 +152,8 @@ window.onload = function () {
                     }
                 }
             })
-            .catch(function () {
+            .catch(function(error) {
+                console.log(error.message);
             });
     }
     

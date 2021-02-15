@@ -15,11 +15,6 @@
     <link rel="stylesheet" href="index.css" />
   </head>
 
-  <!--To do list
-Make checkboxes hide certain containers.
-Add enabling of alphabetical order.
-Make better styles.-->
-
   <body>
       <div class="header">
         <a href="index.html" class="logo">
@@ -44,7 +39,7 @@ Make better styles.-->
                 name="weatherName"
                 value="weatherValue"
               />
-              <label class="weatherLbl" for="weatherCheck">Weather</label><br />
+              <label class="weatherLbl" for="weatherCheck">Current Weather</label><br />
 
               <input
                 class="attractionsCheck"
@@ -53,7 +48,7 @@ Make better styles.-->
                 name="attractionsName"
                 value="attractionsValue"
               />
-              <label class="attractionsLbl" for="attractionsCheck">Attractions</label><br/>
+              <label class="attractionsLbl" for="attractionsCheck">Popular Attractions</label><br/>
 
               <input
                 class="alphaCheck"
@@ -62,10 +57,9 @@ Make better styles.-->
                 name="alphaName"
                 value="alphaValue"
               />
-              <label class="alphaLbl" for="alphaCheck">Alphabetically</label><br /><br />
+              <label class="alphaLbl" for="alphaCheck">Sort Alphabetically</label><br /><br />
             </div>
     </div>
-
 
 
         <!--Location-->
@@ -76,14 +70,13 @@ Make better styles.-->
             
             <div id="weather-segment" class="weather-segment">
               <div class="current">
-                <div class="temp"><span></span></div>
+                <div class="temp"><p id="temp"></p></div>
                 <div class="weather"></div>
                 <div class="weather-status">
                   <img id="cond-img"><p id="condition"></p>
                 </div>
               </div>
             </div>
-
 
             <div id="attraction-segment" class="attraction-segment">
             <div class="attractions" id="attractions">
