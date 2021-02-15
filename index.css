@@ -2,40 +2,44 @@
     font-family: 'montserrat', sans-serif;
     padding: 0;
     margin: 0; 
+
 }
 
-body { 
+body {
     background-image: url('city.png');
     background-attachment: fixed;  
     background-size: cover;
     max-width: 2000px;
-    margin: auto;
     height: fit-content;
+    
 }
 
 .header {
     overflow: hidden;
     padding: 20px 10px;
+
 }
 
 .header a {
-    float: left;
     color: white;
     padding: 12px;
     text-decoration: none;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
     line-height: 25px;
-    cursor: pointer;
+    
 }
 
 .header a.logo {
     font-size: 50px;
     font-weight: bold;
+
+    
 }
 
 .header a:hover {
     background-color: rgba(38, 91, 126, 0.6);
     border-radius: 5px;
+
 }
 
 
@@ -54,10 +58,10 @@ body {
     font-family: 'montserrat', sans-serif;
     padding-top: 35px;
     padding-bottom: 20px;
+    
 }
 
 .search-menu {
-    
     display: block;
     background-color: rgba(27, 113, 170, 0.6);
     height: 300px;
@@ -65,6 +69,7 @@ body {
     margin-right: 30%;
     margin-top: 2%;
     border-radius: 5px;
+    
 }
 
 .search-bar .search-box {
@@ -76,11 +81,8 @@ body {
     width: 50%;
     margin-left: 25%;
     align-self: center;
+    
 }
-
-
-
-
 
 
 /* City, date, time and weather results */
@@ -92,6 +94,7 @@ main {
     display: flex;
     align-items: center;
     text-align: center;
+    
 }
 
 .weather-segment {
@@ -102,40 +105,44 @@ main {
     text-shadow: 0 0 0.40em #4b4b4b;
     height: 300px;
     margin-top: 2px;
+    
 }
 
 .location .city {
-    transition: 2s;
+    padding-top: 50px;
     color: white;
     text-shadow: 0 0 0.40em #4b4b4b;
     font-size: 70px;
     font-weight: bold;
+    
 }
 
 .location .date {
-    transition: 2s;
+    
     color: white;
     text-shadow: 0 0 0.40em #4b4b4b;
     font-size: 50px;
     font-weight: bold;
+    
 }
 
 .location .temp {
-    transition: 3s;
     font-size: 80px;
     font-weight: 900;
     margin: 30px 0px;
+    
 }
 
 .location .weather {
-    transition: 2s;
     font-size: 40px;
     font-weight: bold;
+    
 }
 
 #cond-img {
     width: 120px;
     font-size: 200px;
+    
 }
 
 
@@ -143,30 +150,26 @@ main {
 
 /* Checkboxes */
 
-
 .search-menu .checkboxes {
     padding-bottom: 2%;
     margin-left: 35%;
     font-size: 20px;
     margin-top: 5%;
+
 }
 
 .weatherLbl {
     color: white;
     text-shadow: 0 0 0.40em #4b4b4b;
     padding-left: 10px;
+
 }
 
 .attractionsLbl {
     color: white;
     text-shadow: 0 0 0.40em #4b4b4b;
     padding-left: 10px;
-}
 
-.alphaLbl {
-    color: white;
-    text-shadow: 0 0 0.40em #4b4b4b;
-    padding-left: 10px;
 }
 
 
@@ -176,15 +179,18 @@ main {
 
 #attractions-title {
     font-size: 48px;
+    
 }
 
 .attraction-segment {
     display: none;
+    
 }
 
 
 .attractions {
     display: flex;
+    
 }
 
 
@@ -195,6 +201,7 @@ main {
     height: 200px;
     padding: 10px;
     margin: 30px;
+    
 }
 
 .attraction-box h3 {
@@ -202,6 +209,7 @@ main {
     text-shadow: 0 0 0.40em #4b4b4b;
     width: 400px;
     font-size: 36px;
+    
 }
 
 .attraction-box p {
@@ -210,6 +218,7 @@ main {
     font-size: 26px;
     padding: 10px;
     margin: auto;
+    
 }
 
 

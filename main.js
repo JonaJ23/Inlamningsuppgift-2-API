@@ -4,11 +4,8 @@ window.onload = function () {
     const searchBox = document.querySelector('.search-box');
     searchBox.addEventListener('keypress', setQuery);
 
-
     const weatherCheckbox = document.getElementById('weatherCheck');
-    const attractionsCheckbox = document.getElementById('attractionsCheck');
-    const filter = document.getElementById('alphaCheck');  
-
+    const attractionsCheckbox = document.getElementById('attractionsCheck'); 
 
     // SEARCHBOX VALUE
 
@@ -52,8 +49,6 @@ window.onload = function () {
         attractions.style.display = 'none';
     }
 
-
-
     
     // OPENWEATHER API-CALL
     
@@ -70,9 +65,6 @@ window.onload = function () {
             }
             else if (response.status === 500) {
                 alert("500 Internal error with server. Try again later")
-            }
-            else if (response.status === 401) {
-                alert("Unauthorized access to server detected. Is possibly out of date or suffers from communication error")
             }
             else {
                 alert("Oops! Something went wrong. Try again.")
@@ -126,7 +118,7 @@ window.onload = function () {
     
         const clientID = "G21QHFLO1V3QABSS5VYAENKWSPWZLUNFOVXHOCPVLZIAWC4U";
         const clientSecret = "EDBQEB3FMDFG5LBX5I3TWJACDAJUJGBLJHEVQELYWHGRMP1L";
-    
+
         fetch('https://api.foursquare.com/v2/venues/explore?client_id=' + clientID + '&client_secret=' + clientSecret + '&near=' + city + '&limit=10&v=20210211')
             .then(function (response) { return response.json() })
             .then(function (attractions) {
@@ -134,17 +126,19 @@ window.onload = function () {
                 displayAttractionsResults(attractions);
                 console.log(attractions);
 
+                // WEATHER
+
                 if (weatherCheckbox.checked == true) { 
                     hideAttractionResults();
                     showWeatherResults();
-                    if (attractionsCheckbox.checked == true) {
-                        showAttractionResults();
-                    }
                 }
-                if (weatherCheckbox.checked == false) { //
+                if (weatherCheckbox.checked == false) {
                     showAttractionResults();
                     showWeatherResults();               
                 }
+
+                // TOP ATTRACTIONS 
+
                 if (attractionsCheckbox.checked == true) {
                     showAttractionResults();
                     if (weatherCheckbox.checked == false) {
@@ -165,6 +159,5 @@ window.onload = function () {
             document.getElementById('attbox' + i + '-adress').innerHTML = attractions.response.groups[0].items[i].venue.location.address;
         }
     }
-    
 }
 
