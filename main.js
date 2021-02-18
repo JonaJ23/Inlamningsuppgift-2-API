@@ -52,6 +52,11 @@ window.onload = function () {
     
     // OPENWEATHER API-CALL
     
+    /* I denna funktion kallas api:n från openweathermap.org genom en fetch via URL:n. 
+    Ett svar skickas då tillbaka via parametern response och konverterar sedan det till ett json objekt.
+    Därefter kallas json-objektet med den lokala funktionen "displayWeatherResults" som visar platsens nuvarande väder.
+    Om det stöts på ett kommunikationsfel med servern så skickas en annan status till användaren istället. 
+    */
     function getWeatherResults(city) {
         const weatherAPI = '1c39d2bbe79193bd9cf7413fc49c0d29';
         
@@ -114,12 +119,15 @@ window.onload = function () {
     
     // FOURSQUARE CLIENT
     
+    /* Denna funktion är motsvarande till hur Openweather fungerar när den kallar på api:n osv,
+    fast i detta fall ska en förfrågan efter stadens 3 populäraste attraktioner fetchas via Foursquares URL med client-parametrarna.
+    När användaren söker efter en stad används kryssrutorna som en enkel döljningsfunktion för att antagligen visa enbart väder eller attraktioner. */
     function getAttractionResults(city) {
     
         const clientID = "G21QHFLO1V3QABSS5VYAENKWSPWZLUNFOVXHOCPVLZIAWC4U";
         const clientSecret = "EDBQEB3FMDFG5LBX5I3TWJACDAJUJGBLJHEVQELYWHGRMP1L";
 
-        fetch('https://api.foursquare.com/v2/venues/explore?client_id=' + clientID + '&client_secret=' + clientSecret + '&near=' + city + '&limit=10&v=20210211')
+        fetch('https://api.foursquare.com/v2/venues/explore?client_id=' + clientID + '&client_secret=' + clientSecret + '&near=' + city + '&limit=3&v=20210218')
             .then(function (response) { return response.json() })
             .then(function (attractions) {
 
